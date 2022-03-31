@@ -1,13 +1,16 @@
-export interface userProps {
-    id: number;
-    name: string;
+export interface businessProps {
+    id: string;
+    description: string;
     email: string;
-    username: string;
+    name: string;
+    address: addressProps;
+    image: string;
+    phone: string;
 }
-
-export interface taskProps {
-    id: number;
-    title: string;
-    userId: number;
-    completed: boolean;
+export interface addressProps {
+    name: string;
+    street: string;
+    zip: string;
+    city: string;
+    country: string;
 }
