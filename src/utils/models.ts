@@ -8,7 +8,7 @@ export interface businessProps {
     phone: string;
 }
 export interface addressProps {
-    name: string;
+    number: string;
     street: string;
     zip: string;
     city: string;

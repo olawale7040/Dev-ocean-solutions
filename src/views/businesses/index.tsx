@@ -3,21 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // Actions
-import { fetchBusinesses } from "src/slices/businesses";
+import { fetchBusinesses, viewBusiness } from "src/slices/businesses";
 import Card from "src/components/Card";
-
 // Models
 import { businessProps } from "src/utils/models";
+import { RootState } from "src/store";
 
 const Businesses = () => {
   const dispatch = useDispatch();
   // Navigate
   const navigate = useNavigate();
-  //@ts-ignore
-  const allBusinesses = useSelector((state) => state.businesses.businesses);
+  const { businesses, error } = useSelector(
+    (state: RootState) => state.businesses
+  );
 
   const handleViewBusiness = (id: string) => {
-    navigate("/item");
+    dispatch(viewBusiness(id));
+    navigate(`business/${id}`);
   };
 
   useEffect(() => {
@@ -25,21 +27,33 @@ const Businesses = () => {
   }, [dispatch]);
   return (
     <section className="main-content">
-      <div className="content-wrapper">
-        <div className="card head-card">
-          <div className="name-section">Name</div>
-          <div className="description-section"> Description</div>
+      {businesses.length > 0 && (
+        <div className="content-wrapper">
+          <div className="card head-card">
+            <div className="name-section">Name</div>
+            <div className="description-section"> Description</div>
+          </div>
+          <div className="businesses-list">
+            {businesses.map((business: businessProps) => (
+              <Card
+                key={business.id}
+                business={business}
+                handleClick={handleViewBusiness}
+              />
+            ))}
+          </div>
         </div>
-        <div className="businesses-list">
-          {allBusinesses.map((business: businessProps) => (
-            <Card
-              key={business.id}
-              business={business}
-              handleClick={handleViewBusiness}
-            />
-          ))}
+      )}
+      {businesses.length === 0 && !error && (
+        <div className="empty-container">
+          <div>Loading.....</div>
         </div>
-      </div>
+      )}
+      {error && (
+        <div className="empty-container">
+          <div>{error}</div>
+        </div>
+      )}
     </section>
   );
 };

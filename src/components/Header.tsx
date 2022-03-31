@@ -5,7 +5,7 @@ const Header = () => {
       <nav className="navbar">
         <div className="brand-wrap">
           <Link to="/" className="nav-link">
-            <div className="brand-name">App</div>
+            <div className="brand-name">Businesses</div>
           </Link>
         </div>
       </nav>
