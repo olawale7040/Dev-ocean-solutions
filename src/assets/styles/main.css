@@ -45,6 +45,7 @@ header {
   margin-top: 66px;
   padding: 48px;
   background: #f8f8fa;
+  min-height: calc(100vh - 80px);
 }
 .empty-container {
   height: 50vh;
@@ -178,4 +179,38 @@ header {
 .list-address {
   width: 70%;
   color: #53585f;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .business-details {
+    flex-wrap: wrap;
+  }
+  .business-information {
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .text-header {
+    text-align: center;
+  }
+  .business-address,
+  .business-contact {
+    margin-top: 24px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+  }
+  .box-information {
+    margin-top: 12px;
+  }
+  .nearby-container {
+    width: 100%;
+    margin-top: 24px;
+  }
 }
