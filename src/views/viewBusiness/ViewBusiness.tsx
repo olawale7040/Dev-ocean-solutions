@@ -25,13 +25,7 @@ const ViewBusiness = () => {
               style={{
                 backgroundImage: `url(${businessDetails.image})`,
               }}
-            >
-              {/* <img
-                className="responsive-image"
-                src={businessDetails.image}
-                alt=""
-              /> */}
-            </div>
+            ></div>
           </div>
           <div className="business-details">
             <BusinessDetails businessDetails={businessDetails} />
