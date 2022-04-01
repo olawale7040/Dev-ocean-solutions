@@ -8,6 +8,8 @@ Business List Application
 
 - [JavaScript](https://www.javascript.com/)
 
+- [Typescript](https://www.typescriptlang.org/)
+
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 
 ## Featured performance objectives
