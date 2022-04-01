@@ -1,4 +1,4 @@
-# Dev Ocean Frontend Test
+# Dev Ocean Solutions Frontend Test
 
 Business List Application
 
