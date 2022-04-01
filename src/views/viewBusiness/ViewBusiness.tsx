@@ -2,13 +2,13 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { RootState } from "src/store";
 import goBackImage from "src/assets/img/back-icon.svg";
+import BusinessDetails from "./BusinessDetails";
 import NearbyPlaces from "./NearbyPlaces";
 
-const Item = () => {
+const ViewBusiness = () => {
   const businessDetails = useSelector(
     (state: RootState) => state.businesses.businessDetails
   );
-  const address = businessDetails?.address;
   return (
     <section className="main-content">
       {businessDetails ? (
@@ -20,33 +20,21 @@ const Item = () => {
             </Link>
           </div>
           <div className="image-container">
-            <img
-              className="responsive-image"
-              src={businessDetails.image}
-              alt=""
-            />
+            <div
+              className="image-background"
+              style={{
+                backgroundImage: `url(${businessDetails.image})`,
+              }}
+            >
+              {/* <img
+                className="responsive-image"
+                src={businessDetails.image}
+                alt=""
+              /> */}
+            </div>
           </div>
           <div className="business-details">
-            <div className="business-information">
-              <div className="business-address">
-                <div className="text-header">Address</div>
-                <div className="box-information">
-                  <div className="light-text">
-                    {address?.number} {address?.street} Street
-                  </div>
-                  <div className="light-text">
-                    {address?.city}, {address?.zip}
-                  </div>
-                </div>
-              </div>
-              <div className="business-contact">
-                <div className="text-header">Contact</div>
-                <div className="box-information">
-                  <div className="light-text">{businessDetails.phone}</div>
-                  <div className="light-text">{businessDetails.email}</div>
-                </div>
-              </div>
-            </div>
+            <BusinessDetails businessDetails={businessDetails} />
             <div className="nearby-container">
               <NearbyPlaces />
             </div>
@@ -64,4 +52,4 @@ const Item = () => {
   );
 };
 
-export default Item;
+export default ViewBusiness;

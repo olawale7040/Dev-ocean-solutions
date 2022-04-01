@@ -9,7 +9,7 @@ import Card from "src/components/Card";
 import { businessProps } from "src/utils/models";
 import { RootState } from "src/store";
 
-const Businesses = () => {
+const BusinessesView = () => {
   const dispatch = useDispatch();
   // Navigate
   const navigate = useNavigate();
@@ -26,14 +26,14 @@ const Businesses = () => {
     dispatch(fetchBusinesses());
   }, [dispatch]);
   return (
-    <section className="main-content">
+    <section className="main-content" data-testid="businesses-view">
       {businesses.length > 0 && (
         <div className="content-wrapper">
           <div className="card head-card">
             <div className="name-section">Name</div>
             <div className="description-section"> Description</div>
           </div>
-          <div className="businesses-list">
+          <div className="businesses-list" data-testid="businesses-list">
             {businesses.map((business: businessProps) => (
               <Card
                 key={business.id}
@@ -58,4 +58,4 @@ const Businesses = () => {
   );
 };
 
-export default Businesses;
+export default BusinessesView;

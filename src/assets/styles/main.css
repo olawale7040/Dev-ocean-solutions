@@ -83,7 +83,6 @@ header {
   font-weight: bold;
 }
 .businesses-list {
-  /* height: 500px; */
   height: calc(100vh - 180px);
   overflow-y: auto;
 }
@@ -101,7 +100,7 @@ header {
   cursor: pointer;
 }
 
-/* Item Page */
+/* ViewBusiness Page */
 .go-back-btn {
   margin-bottom: 16px;
   display: flex;
@@ -113,6 +112,16 @@ header {
   font-weight: 500;
   cursor: pointer;
   margin-top: 2px;
+}
+.image-container {
+  width: 100%;
+  height: 300px;
+}
+.image-background {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: top;
 }
 .responsive-image {
   width: 100%;
