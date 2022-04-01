@@ -182,7 +182,6 @@ header {
 }
 
 /* Mobile responsive */
-
 @media (max-width: 768px) {
   .main-content {
     padding-left: 12px;
