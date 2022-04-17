@@ -17,7 +17,7 @@ const NearbyPlaces = () => {
           ))}
         </div>
       ) : (
-        <div>No nearbyPlaces</div>
+        <div>No nearby places</div>
       )}
     </div>
   );
